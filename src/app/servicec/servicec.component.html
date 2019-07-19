@@ -1,0 +1,127 @@
+<form>
+  
+   <!-- <mk-box header="sign up" [isCollapsable]="false" [isRemovable]="false">-->
+        <div class="row">
+               
+           
+            <div class="col-md-3 col-xs-12 pull-right"> 
+              <input (click)="addUser()"type="button"value="submit">
+                    
+              <input type="reset"value="Cancle">
+              </div>
+    
+             
+    
+            </div><br>
+      <div class="col-md-12 col-xs-12">
+        <div class="row">
+          <div class="col-md-5 col-xs-12">
+            <label for="firstName"><b>First Name</b></label>
+            <input required [(ngModel)]="clobj.firstName" id="firstName"type="text"class="form-control"placeholder="firstName"class="form-control"[ngModelOptions]="{standalone: true}">
+          <!---</div>
+          <div class="col-md-5 col-xs-12">-->
+            <label for="lastName"><b>last Name</b></label>
+            <input required [(ngModel)]="clobj.lastName" id="lastName"type="text"class="form-control"placeholder="lastName"class="form-control"[ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+    
+        <br /><div style="color: red">
+          {{errorFirstName}}{{errorlastName}}</div>
+      
+    
+        <div class="row">
+          <div class="col-md-5 col-xs-12">
+            <label for="AddressLine1"><b>Address Line 1</b></label>
+            <input required [(ngModel)]="clobj.AddressLine1" id="AddressLine1"type="text"class="form-control"placeholder="AddressLine1"class="form-control"[ngModelOptions]="{standalone: true}">
+          <!---</div>
+          <div class="col-md-5 col-xs-12">-->
+            <label for="AddressLine2"><b>Address Line 2</b></label>
+            <input required [(ngModel)]="clobj.AddressLine2" id="AddressLine2"type="text"class="form-control"placeholder="AddressLine2"class="form-control"[ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+     <br />
+     <div style="color: red">
+      {{errorAddress1}}{{errorAddress2}}</div><br>
+      <div class="row">
+      <div class="col-md-4 col-xs-12">
+        <label for="Email"><b>Email</b></label>
+        <input required [(ngModel)]="clobj.Email" id="Email"type="text"class="form-control"placeholder="Email"class="form-control"[ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <br />
+    <div style="color: red">
+      {{errorEmail}}</div>
+      <div class="row">
+           
+
+    <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <label for="Contact"><b>Contact</b></label>
+           
+              <input required [(ngModel)]="clobj.Contact" id="Contact"type="text"class="form-control"placeholder="Contact"class="form-control"[ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+        </div>
+       
+        <br />
+        
+  <div style="color: red">
+        {{errorCellPhone}}</div><br>
+    
+        
+            <div class="col-md-3 col-xs-12 pull-right"> 
+              <input (click)="addUser()"type="button"value="submit">
+                    
+              <input type="reset"value="Cancle">
+              </div>
+    
+            
+    
+            </div>
+     
+    <!--</mk-box>-->
+    <table>
+
+            <thead>
+
+            <th>FIRST NAME</th>
+
+            <th>LAST NAME</th>
+
+            <th>ADDRESSLINE1</th>
+
+            <th>ADDRESSLINE2</th>
+
+            <th>CONTACT NUMBER</th>
+
+            <th>EMAIL</th>
+
+            </thead>
+
+ 
+
+            <tbody>
+
+            <tr *ngFor="let users of userlist">
+
+            <td>{{users.firstName}}</td>
+
+            <td>{{users.lastName}}</td>
+
+            <td>{{users.AddressLine1}}</td>
+
+            <td>{{users.AddressLine2}}</td>
+
+            <td>{{users.Contact}}</td>
+
+            <td>{{users.Email}}</td>
+
+            </tr>
+
+            </tbody>
+
+ 
+
+     </table>
+    </form>
